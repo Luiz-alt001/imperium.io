@@ -1,60 +1,140 @@
 :root {
-    --azul-dark: #0a192f;
-    --dourado: #c5a059;
-    --branco: #ffffff;
-    --cinza-claro: #f4f4f4;
+    --primary-dark: #050a14; /* Azul quase preto */
+    --accent-gold: #d4af37;  /* Dourado metálico */
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f2d06b 100%);
+    --text-light: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.03);
+    --shadow-deep: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background: var(--cinza-claro); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* Top Bar */
-.top-bar { background: var(--azul-dark); color: white; padding: 8px 0; font-size: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.top-bar .container { display: flex; justify-content: space-between; }
-.top-contacts a { color: var(--dourado); text-decoration: none; font-weight: bold; }
-
-/* Header */
-header { background: var(--branco); padding: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-.header-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--azul-dark); font-weight: 700; line-height: 1; }
-.logo small { display: block; font-size: 0.6rem; letter-spacing: 2px; color: var(--dourado); }
-nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }
-nav a { text-decoration: none; color: var(--azul-dark); font-weight: 500; transition: 0.3s; }
-.btn-cta { background: var(--azul-dark); color: white !important; padding: 10px 20px; border-radius: 5px; }
-
-/* Hero */
-.hero { 
-    height: 60vh;
-    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--primary-dark); 
+    color: var(--text-light);
+    overflow-x: hidden;
 }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; }
-.search-container { margin-top: 30px; width: 100%; max-width: 800px; }
-.search-box { background: white; padding: 10px; border-radius: 8px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.search-box select, .search-box button { padding: 12px; border: 1px solid #ddd; border-radius: 4px; outline: none; }
-.search-box button { background: var(--dourado); color: white; border: none; font-weight: bold; cursor: pointer; }
 
-/* Cards */
-.section-padding { padding: 80px 0; }
-.section-title { text-align: center; margin-bottom: 50px; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-.property-card { background: white; border-radius: 15px; overflow: hidden; display: flex; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.property-image { flex: 1; position: relative; }
-.property-image img { width: 100%; height: 100%; object-fit: cover; }
-.property-info { flex: 1; padding: 40px; }
-.badge-status { position: absolute; top: 20px; left: 20px; background: var(--dourado); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
-.price { font-size: 2rem; color: var(--azul-dark); font-weight: bold; margin: 20px 0; }
-.btn-whatsapp-action { display: block; background: #25d366; color: white; text-align: center; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
-.btn-whatsapp-action:hover { background: #128c7e; transform: scale(1.02); }
+/* Scrollbar Personalizada */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--primary-dark); }
+::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 10px; }
 
-/* Footer */
-footer { background: var(--azul-dark); color: white; padding: 60px 0; margin-top: 50px; }
-.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.footer-contact h4 { color: var(--dourado); margin-bottom: 15px; }
+/* Top Bar Sofisticada */
+.top-bar {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
 
-@media (max-width: 768px) {
-    .property-card { flex-direction: column; }
-    .search-box { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
+/* Header com Efeito Glass */
+header {
+    background: rgba(5, 10, 20, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+
+/* Hero Section "Imersiva" */
+.hero {
+    height: 85vh;
+    background: linear-gradient(to bottom, rgba(5,10,20,0.4), var(--primary-dark)), 
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Filtro Estilo Dark Mode */
+.search-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.search-box select {
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Card de Imóvel Premium */
+.property-card {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.property-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--accent-gold);
+    box-shadow: var(--shadow-deep);
+}
+
+.price {
+    font-size: 2.5rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Botão WhatsApp "Glow" */
+.btn-whatsapp-action {
+    background: var(--gold-gradient);
+    color: var(--primary-dark) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-whatsapp-action::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn-whatsapp-action:hover::before {
+    left: 100%;
+}
+
+/* Rodapé */
+footer {
+    background: #02050a;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
