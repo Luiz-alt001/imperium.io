@@ -1,7 +1,7 @@
 /* --- ROOT & CONFIGURAÇÕES GERAIS --- */
 :root {
-    --primary-red: #cc2b2b;      /* Vermelho Sóbrio e Elegante (Menos Vibrante) */
-    --red-hover: #a32222;        /* Vermelho mais escuro para estados de Hover */
+    --primary-red: #cc2b2b;      /* Vermelho Sóbrio (Menos Vibrante) */
+    --red-hover: #a32222;        /* Vermelho Escuro para Hover */
     --gold: #d4af37;             /* Dourado Nobre Clássico */
     --dark: #050505;             /* Preto Profundo */
     --card-bg: #121212;          /* Fundo dos Cards */
@@ -34,7 +34,7 @@ body {
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 10px; }
 
-/* --- HEADER LIMPO (Sem botão de contato) --- */
+/* --- HEADER LIMPO --- */
 header {
     background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
@@ -99,7 +99,6 @@ nav a:hover { color: var(--primary-red); }
     font-size: 4rem; 
     color: #fff; 
     margin-bottom: 15px;
-    text-shadow: none; /* Removido o brilho neon para manter a sobriedade */
 }
 
 .hero p { font-size: 1.1rem; margin-bottom: 40px; color: var(--gold); letter-spacing: 1px; }
@@ -154,9 +153,17 @@ nav a:hover { color: var(--primary-red); }
     border: 1px solid rgba(212, 175, 55, 0.2); 
     padding: 15px; 
     border-radius: 2px; 
+    width: 100%;
 }
 
-.sobre-img img { width: 100%; border-radius: 0; display: block; filter: grayscale(10%) contrast(1.05); }
+.sobre-img img { 
+    width: 100%; 
+    height: auto; 
+    min-height: 350px;
+    object-fit: cover;
+    display: block; 
+    filter: grayscale(10%) contrast(1.05); 
+}
 
 /* --- PROPERTY CARD --- */
 .property-card-horizontal { 
@@ -260,10 +267,24 @@ footer {
 
 /* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
-    nav { display: none; } /* Remove navegação do header para foco na marca */
+    nav { display: none; } 
     .header-flex { justify-content: center; }
     
-    .grid-sobre, .property-card-horizontal, .footer-grid { 
+    .section-padding { padding: 60px 0; }
+
+    .grid-sobre { 
+        display: flex;
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .sobre-img img {
+        min-height: 280px; /* Garante que a foto apareça bem no celular */
+        border-radius: 4px;
+    }
+
+    .property-card-horizontal, .footer-grid { 
         flex-direction: column; 
         text-align: center; 
     }
