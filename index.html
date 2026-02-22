@@ -3,124 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imperium | Negócios Imobiliários</title>
+    <title>Imperium | Negócios Imobiliários em Itaperuna</title>
+    
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/7322/7322265.png">
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-    <header>
+    <header class="main-header">
         <div class="container header-flex">
-            <div class="logo">
+            <a href="#home" class="logo">
                 IMPERIUM
                 <small>NEGÓCIOS IMOBILIÁRIOS</small>
-            </div>
-            <nav>
+            </a>
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#imoveis">Imóveis</a></li>
-                    <li><a href="https://wa.me/5522999676939" class="btn-vip">CONTATO VIP</a></li>
+                    <li><a href="https://wa.me/5522999676939" class="btn-vip" target="_blank">CONTATO VIP</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content reveal">
-            <h1 class="glow-text">Poder, Força e Liderança.</h1>
-            <p>Transformando grandes sonhos em conquistas reais em Itaperuna.</p>
-            <div class="search-box">
-                <select><option>Alugar</option><option>Comprar</option></select>
-                <input type="text" placeholder="Bairro ou Tipo de Imóvel...">
-                <button class="btn-main">BUSCAR AGORA</button>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content reveal">
+                <h1 class="glow-text">Poder, Força e Liderança.</h1>
+                <p>Onde grandes sonhos se tornam conquistas reais em Itaperuna e região.</p>
+                <form class="search-box">
+                    <select aria-label="Finalidade">
+                        <option>Alugar</option>
+                        <option>Comprar</option>
+                    </select>
+                    <input type="text" placeholder="Ex: Casa, Galpão, Cidade Nova..." aria-label="Buscar imóvel">
+                    <button type="submit" class="btn-main">BUSCAR AGORA</button>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="sobre" class="section-padding">
-        <div class="container grid-sobre">
-            <div class="sobre-text reveal">
-                <h2 class="section-title">Quem Somos</h2>
-                <p class="highlight">Na Imperium Imóveis, somos mais do que uma imobiliária — somos especialistas em realizar projetos de vida.</p>
-                <p>Sob a liderança de <strong>José Ricardo Pádua de Castro</strong>, atuamos com ética e excelência. Aqui, o cliente é o protagonista da sua própria história.</p>
-                
-                <div class="counter-container">
-                    <div class="counter-item">
-                        <h3 class="count" data-target="10">0</h3>
-                        <span>Anos de Mercado</span>
+        <section id="sobre" class="section-padding">
+            <div class="container grid-sobre">
+                <div class="sobre-text reveal">
+                    <h2 class="section-title">Nossa História</h2>
+                    <p class="highlight">Especialistas em realizar projetos de vida com o peso de uma marca líder.</p>
+                    <p>Sob a visão estratégica de <strong>José Ricardo Pádua de Castro</strong>, a Imperium Imóveis consolidou-se pela ética inegociável e excelência operacional.</p>
+                    
+                    <div class="counter-container">
+                        <div class="counter-item">
+                            <h3 class="count" data-target="10">0</h3>
+                            <span>Anos de Mercado</span>
+                        </div>
+                        <div class="counter-item">
+                            <h3 class="count" data-target="100">0</h3>
+                            <span>% Transparência</span>
+                        </div>
                     </div>
-                    <div class="counter-item">
-                        <h3 class="count" data-target="100">0</h3>
-                        <span>% Transparência</span>
+                </div>
+                <div class="sobre-img reveal">
+                    <div class="frame-gold">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000" alt="Consultoria Imobiliária Imperium">
                     </div>
                 </div>
             </div>
-            <div class="sobre-img reveal">
-                <div class="frame-gold">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000" alt="Consultoria Imobiliária">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="imoveis" class="container section-padding">
-        <h2 class="section-title text-center">Oportunidade Imperial</h2>
-        <div class="property-card-horizontal reveal">
-            <div class="prop-img">
-                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1000" alt="Galpão Itaperuna">
-                <div class="badge">DESTAQUE</div>
-            </div>
-            <div class="prop-details">
-                <span class="category">GALPÃO COMERCIAL</span>
-                <h3>Cidade Nova - Próximo ao Fluminense 2</h3>
-                <p class="desc">Área de 654,04 m² com suporte completo e acompanhamento jurídico garantido pela Imperium.</p>
-                <div class="features">
-                    <span>📐 654m²</span>
-                    <span>🚿 2 WC</span>
+        <section id="imoveis" class="container section-padding">
+            <h2 class="section-title text-center">Oportunidade Imperial</h2>
+            <article class="property-card-horizontal reveal">
+                <div class="prop-img">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1000" alt="Galpão Comercial Cidade Nova">
+                    <div class="badge">DESTAQUE</div>
                 </div>
-                <div class="price">R$ 10.000 <small>/mês</small></div>
-                <a href="https://wa.me/5522999676939?text=Olá! Tenho interesse no Galpão da Cidade Nova." target="_blank" class="btn-wa">
-                    RESERVAR VIA WHATSAPP
-                </a>
-            </div>
-        </div>
-    </section>
+                <div class="prop-details">
+                    <span class="category">GALPÃO COMERCIAL</span>
+                    <h3>Cidade Nova - Itaperuna/RJ</h3>
+                    <p class="desc">Localização estratégica próximo ao Fluminense 2. Imóvel com 654,04 m², ideal para grandes operações.</p>
+                    <div class="features">
+                        <span>📐 654m² de Área</span>
+                        <span>🚿 2 Banheiros</span>
+                    </div>
+                    <div class="price">R$ 10.000 <small>/mês</small></div>
+                    <a href="https://wa.me/5522999676939?text=Olá! Desejo informações sobre o Galpão na Cidade Nova (R$ 10.000)." target="_blank" class="btn-wa">
+                        RESERVAR VIA WHATSAPP
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container footer-grid">
-            <div>
+            <div class="footer-brand">
                 <div class="logo">IMPERIUM</div>
                 <p>CRECI: 11626 | CNPJ: 57.273.932/0001-25</p>
+                <p>© 2026 Imperium Negócios Imobiliários.</p>
             </div>
             <div class="contact-footer">
                 <p>📍 Centro, Itaperuna - RJ</p>
+                <p>📧 contato@imperiumimoveis.com.br</p>
                 <p>📞 (22) 99967-6939</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Animações de Scroll
-        ScrollReveal().reveal('.reveal', { delay: 200, distance: '40px', duration: 1000, origin: 'bottom' });
+        // Configuração de Animação de Entrada
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '60px',
+            duration: 1200,
+            delay: 200,
+            reset: false // Para animar apenas uma vez
+        });
 
-        // Contador Animado
+        sr.reveal('.reveal');
+        sr.reveal('.counter-item', { interval: 200 });
+        sr.reveal('.property-card-horizontal', { delay: 400 });
+
+        // Script do Contador Animado
         const counters = document.querySelectorAll('.count');
+        const speed = 200;
+
         counters.forEach(counter => {
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
-                const speed = 200;
                 const inc = target / speed;
+
                 if (count < target) {
                     counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 1);
+                    setTimeout(updateCount, 15);
                 } else {
                     counter.innerText = target;
                 }
             };
+            
+            // Inicia o contador apenas quando a seção estiver visível
             updateCount();
         });
     </script>

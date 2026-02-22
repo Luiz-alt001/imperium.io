@@ -1,6 +1,7 @@
 /* --- ROOT & CONFIGURAÇÕES GERAIS --- */
 :root {
-    --primary-red: #7b0d1e;      /* Vermelho Imperial Profundo */
+    --primary-red: #ff3131;      /* Vermelho Vibrante e Aberto */
+    --red-hover: #ff5e5e;        /* Vermelho mais claro para Hover */
     --gold: #d4af37;             /* Dourado Metálico */
     --gold-bright: #f2d06b;      /* Dourado Brilhante */
     --dark: #050505;             /* Preto Profundo */
@@ -71,27 +72,29 @@ header {
 
 nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
 nav a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 400; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-nav a:hover { color: var(--gold); }
+nav a:hover { color: var(--primary-red); }
 
 .btn-vip { 
-    border: 1px solid var(--gold); 
+    border: 1px solid var(--primary-red); 
     padding: 10px 20px; 
     border-radius: 50px; 
-    color: var(--gold) !important; 
+    color: var(--primary-red) !important; 
     font-weight: bold; 
     transition: 0.4s;
+    text-transform: uppercase;
+    font-size: 0.75rem;
 }
 
 .btn-vip:hover { 
-    background: var(--gold); 
-    color: var(--dark) !important; 
-    box-shadow: 0 0 15px var(--gold);
+    background: var(--primary-red); 
+    color: #fff !important; 
+    box-shadow: 0 0 20px rgba(255, 49, 49, 0.4);
 }
 
 /* --- HERO SECTION --- */
 .hero {
     height: 85vh;
-    background: linear-gradient(rgba(0,0,0,0.75), var(--dark)), 
+    background: linear-gradient(rgba(0,0,0,0.65), var(--dark)), 
                 url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070');
     background-size: cover; 
     background-position: center;
@@ -105,7 +108,7 @@ nav a:hover { color: var(--gold); }
     font-family: 'Playfair Display', serif; 
     font-size: 5rem; 
     color: #fff; 
-    text-shadow: 0 0 30px rgba(123, 13, 30, 0.9);
+    text-shadow: 0 0 30px rgba(255, 49, 49, 0.6);
     margin-bottom: 10px;
 }
 
@@ -117,13 +120,13 @@ nav a:hover { color: var(--gold); }
     border-radius: 15px; 
     display: flex; 
     gap: 10px; 
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(255, 49, 49, 0.2);
     backdrop-filter: blur(10px);
 }
 
 .search-box input, .search-box select { 
     padding: 15px; 
-    background: rgba(0,0,0,0.5); 
+    background: rgba(0,0,0,0.7); 
     border: 1px solid #333; 
     color: #fff; 
     border-radius: 8px;
@@ -141,11 +144,11 @@ nav a:hover { color: var(--gold); }
     transition: 0.3s;
 }
 
-.btn-main:hover { background: #a51227; transform: scale(1.05); }
+.btn-main:hover { background: var(--red-hover); transform: scale(1.05); }
 
 /* --- SEÇÃO SOBRE NÓS --- */
 .section-padding { padding: 120px 0; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin-bottom: 40px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary-red); margin-bottom: 40px; }
 
 .grid-sobre { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .highlight { font-size: 1.4rem; color: var(--gold); margin-bottom: 25px; font-weight: 700; line-height: 1.4; }
@@ -178,13 +181,13 @@ nav a:hover { color: var(--gold); }
     border-radius: 40px; 
     overflow: hidden; 
     display: flex; 
-    border: 1px solid rgba(212, 175, 55, 0.1); 
+    border: 1px solid rgba(255, 49, 49, 0.1); 
     transition: 0.5s;
 }
 
 .property-card-horizontal:hover {
     border-color: var(--primary-red);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 30px 60px rgba(255, 49, 49, 0.15);
     transform: translateY(-10px);
 }
 
@@ -202,19 +205,20 @@ nav a:hover { color: var(--gold); }
     font-size: 0.75rem; 
     font-weight: 900;
     letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4);
 }
 
 .prop-details { flex: 1.2; padding: 60px; }
 .category { color: var(--gold); font-size: 0.85rem; letter-spacing: 3px; font-weight: 700; }
-.prop-details h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 15px 0; }
+.prop-details h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 15px 0; color: #fff; }
 
 .features { display: flex; gap: 30px; margin: 25px 0; color: #aaa; }
 .price { font-size: 3.5rem; font-weight: 900; color: #fff; margin-bottom: 30px; }
-.price small { font-size: 1rem; color: #666; font-weight: 400; }
+.price small { font-size: 1rem; color: #888; font-weight: 400; }
 
 .btn-wa { 
     display: block; 
-    background: linear-gradient(135deg, var(--primary-red), #5a0a16); 
+    background: linear-gradient(135deg, var(--primary-red), #cc0000); 
     color: white; 
     text-align: center; 
     padding: 22px; 
@@ -228,7 +232,8 @@ nav a:hover { color: var(--gold); }
 
 .btn-wa:hover { 
     filter: brightness(1.2);
-    box-shadow: 0 15px 30px rgba(123, 13, 30, 0.4);
+    box-shadow: 0 15px 30px rgba(255, 49, 49, 0.4);
+    transform: scale(1.02);
 }
 
 /* --- FOOTER --- */
